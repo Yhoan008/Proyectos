@@ -1,0 +1,28 @@
+*{
+    margin:0;
+    padding:0;
+}
+body{
+    background-color: coral;
+    height:100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contain{
+    width:400px;
+    height:150px;
+    background-color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#btn{
+    position: absolute;
+    bottom:100px;
+    padding:10px;
+    border-radius: 10px;
+    background-color: orangered;
+    font-weight:1000;
+    cursor:pointer;
+}

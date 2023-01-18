@@ -1,0 +1,19 @@
+*{
+    margin:0;
+    padding:0;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    overflow-x: hidden;
+}
+body div{
+    margin-top: 35px;
+    width: 400px;
+    height:200px;
+    border-radius:20px;
+    background-color: red;
+    transition: 1s;
+}

@@ -1,0 +1,42 @@
+[
+  {
+    "cedula": "10912",
+    "nombre": "Alvaro",
+    "apellido": "Orozco",
+    "celular": "3112117374",
+    "Departamento": "Gerente",
+    "Genero": "Masculino",
+    "direccion": "Cra cll",
+    "telefono": "NA",
+    "email": "MYfrein@gmail.dom",
+    "salarioBase": "1000000",
+    "hora": "33333.332",
+    "diurno": "2",
+    "noche": "3",
+    "hed": "66666.664",
+    "hen": "100003.0",
+    "subsidio": "106454",
+    "salario": "1273123.6",
+    "trabaja": "true"
+  },
+  {
+    "cedula": "52556594",
+    "nombre": "Elsa Consuelo",
+    "apellido": "Garcia Escobar",
+    "celular": "3112117374",
+    "Departamento": "Administrativo",
+    "Genero": "Femenino",
+    "direccion": "Cra 158B#138D-08",
+    "telefono": "NA",
+    "email": "konus08@hotmail.com",
+    "salarioBase": "",
+    "hora": "",
+    "diurno": "",
+    "noche": "",
+    "hed": "",
+    "hen": "",
+    "subsidio": "",
+    "salario": "",
+    "trabaja": "false"
+  }
+]

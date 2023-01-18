@@ -1,0 +1,86 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    background-color: #2f363e;
+}
+#time{
+    display: flex;
+    gap:50px;
+    min-height: 100%;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+#time div{
+    position: absolute;
+    font-size: 2em;
+    text-align: center;
+}
+#time .circle{
+    position: relative;
+    width:150px;
+    height:150px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+#time .ap{
+    position:relative;
+    font-size:1em;
+    transform:translateY(-50px)
+}
+
+
+/* 
+Propiedades SVG
+*/
+#time .circle svg{
+    position: relative;
+    width: 150px;
+    height: 150px;
+    transform: rotate(-90deg);
+}
+#time .circle svg circle{
+    width: 100%;
+    height: 100%;
+    transform: translate(5px,5px);
+    
+    /*
+    Las propiedades stroke usadas para edicion del borde de imagenes svg
+    */
+    
+    fill: transparent; /*Para definir el color de la imagen*/
+    stroke : var(--clr); /* Para definir el color del borde de la imagen  */
+    stroke-width: 4; /* Tamaño del borde (4px)*/
+    stroke-dasharray:600 20;/*Para la division del borde, el primer valor define el tamaño de cada segmento del borde, y el segundo valor define la distancia entre cada uno */
+    stroke-dasharray: 440;
+
+    stroke-dashoffset: 440; /*Se usa para rotar el borde, solo puede ser visible con la propiedad anterior */
+}
+
+.point{
+    position: relative;
+    top:2px;
+    width:100%;
+    height:100%;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+}
+
+.point::before{
+    content: "";
+    position: absolute;
+    background-color: var(--clr);
+    width: 15px;
+    height:15px;
+    border-radius: 50%;
+    box-shadow: 0 0 20px var(--clr),0 0 60px var(--clr);
+}
+
+
+

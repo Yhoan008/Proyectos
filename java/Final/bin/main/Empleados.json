@@ -1,0 +1,19 @@
+[{
+  "cedula": "123243",
+  "nombre": "Mateo ",
+  "apellido": "Moreno",
+  "celular": "celular",
+  "Departamento": "Gerente",
+  "Genero": "Femenino",
+  "direccion": "Cra 159",
+  "telefono": "telefono",
+  "email": "email",
+  "salarioBase": "SMLV",
+  "hora": "123",
+  "diurno": "diurno",
+  "noche": "noche",
+  "hed": "hed",
+  "hen": "hen",
+  "subsidio": "subdiido",
+  "salario": "millon"
+}]

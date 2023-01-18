@@ -1,0 +1,112 @@
+*{
+    padding:0;
+    margin:0;
+}
+body{
+    position: relative;
+    background-color: #444;
+    overflow-x: hidden;
+}
+.container{
+    position: absolute;
+    transition: .5s;
+}
+.active{
+    transform: rotate(-20deg);
+}
+.page{
+    position: absolute;
+    background-color: white;
+    box-sizing: border-box;
+    width:100vw;
+    height:250vh;
+    padding: 100px 200px;
+}
+.page h2{
+    font-size: 3em;
+}
+.page p{
+    margin-top: 40px;
+    font-size: 1.2em;
+}
+.page h3{
+    margin-top: 40px;
+}
+.page img{
+    width:1000px;
+    margin-top: 20px;
+}
+.circle{
+    position: absolute;
+    top: -125px;
+    left: -125px;
+    background-color: coral;
+    border-radius: 50%;
+    width:250px;
+    height:250px;
+    z-index: 100;
+    transition: .5s;
+}
+.active .circle{
+    transform: rotate(-160deg);
+}
+.circle button{
+    position: relative;
+    width:40px;
+    height:40px;
+    border:0px solid transparent;
+    cursor:pointer;
+}
+.btnClose{
+    top: 50px;
+    left:10px;
+}
+.btnOpen{
+    top: 160px;
+    left: 160px;
+}
+.circle img{
+    background-color: coral;
+    width: 100%;
+    height: 100%;
+}
+
+.menu{
+    position:absolute;
+    width:500px;
+    height:200px;
+    top: 450px;
+    left:-320px;
+    display: flex;
+    flex-direction: column;
+}
+.menu a{
+    display: flex;
+    font-size:1.8em ;
+    text-decoration: none;
+    color:black;
+    font-weight: 900;
+    align-items: center;
+    justify-content:start;
+    margin-top:20px;
+    transition: .5s;
+}
+.activeMenu a{
+    transform: translateX(310px);
+}
+.menu a img{
+    width: 40px;
+    margin-top:px;
+}
+.activeMenu a:first-child{
+    padding-left:30px ;
+    transition-delay: .3s;
+}
+.activeMenu a:nth-child(2){
+    padding-left:50px;
+    transition-delay: .5s;
+}
+.activeMenu a:last-child{
+    padding-left: 80px;
+    transition-delay: .7s;
+}

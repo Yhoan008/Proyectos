@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: #d64;
+    height: 100vh;
+}
+.container{
+    outline: 2px solid red;
+    position: relative;
+    width: 400px;
+    height: 400px;
+    margin: auto;
+    top: 20%;
+}
+.container div{
+    outline: 2px solid red;
+    position: absolute;
+    width:100px;
+    height: 100px;
+    background-color: #7e3;
+    top: 0;
+    bottom:0;
+    right:0;
+    left:0;
+    margin: auto;
+}
+.container div:nth-child(1){
+    top: -210px;
+    transform: rotateY(45deg)  ;
+}
+.container div:nth-child(2){
+    left: -210px;
+    transform: rotateX(45deg) rotateY(45deg) translateX(45px) translateY(-30px);
+}
+.container div:nth-child(3){
+    transform: rotateX(-45deg) rotateY(45deg);
+}
