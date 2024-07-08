@@ -17,6 +17,7 @@ body{
     justify-content: end;
 }
 .container input{
+    border-radius: 20px;
     transition: .5s;
 }
 .container input:first-child{

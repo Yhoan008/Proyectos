@@ -9,6 +9,7 @@ body{
     justify-content: center;
     align-items: center;
     background-color: #2f363e;
+    overflow: hidden;
 }
 .menu{
     position: absolute;
@@ -61,5 +62,5 @@ body{
     transform: rotate(calc(360deg / 8 * var(--i)));
 }
 .active li a{
-    transform: translate(-200px) rotate(calc(360deg / -8 * var(--i)));
+    transform: translate(-150px) rotate(calc(360deg / -8 * var(--i)));
 }
