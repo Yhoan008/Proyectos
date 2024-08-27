@@ -1,0 +1,194 @@
+{
+  "question": "¿Está buscando un producto específico?",
+  "type": "bitask",
+  "options": ["sí", "no"],
+  "descrip": "Filtro usuarios con producto específico en mente",
+  "product": [
+    {
+      "question": "¿Qué tipo de producto está buscando?",
+      "type": "multitask",
+      "options": ["Electrónica", "Ropa", "Hogar"],
+      "descrip": "Tipo de producto",
+      "product": [
+        {
+          "question": "¿Está buscando un teléfono móvil?",
+          "type": "bitask",
+          "options": ["sí", "no"],
+          "descrip": "Filtro usuarios buscan móviles",
+          "product": [
+            {
+              "question": "¿Qué marca prefiere?",
+              "type": "multitask",
+              "options": ["Apple", "Samsung", "Otro"],
+              "descrip": "Preferencia marca",
+              "product": [
+                {
+                  "question": "¿Prefiere la última generación?",
+                  "type": "bitask",
+                  "options": ["sí", "no"],
+                  "descrip": "Busca lo más reciente",
+                  "product": [
+                    {
+                      "question": "",
+                      "type": "solution",
+                      "options": [],
+                      "product": [
+                        "Recomendación: Última generación de la marca seleccionada"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "question": "¿Busca un modelo económico?",
+                  "type": "bitask",
+                  "options": ["sí", "no"],
+                  "descrip": "Sensibilidad precio",
+                  "product": [
+                    {
+                      "question": "",
+                      "type": "solution",
+                      "options": [],
+                      "product": [
+                        "Recomendación: Modelos económicos de la marca seleccionada"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "question": "¿Prefiere un dispositivo usado?",
+              "type": "bitask",
+              "options": ["sí", "no"],
+              "descrip": "Filtro usuarios buscan dispositivos usados",
+              "product": [
+                {
+                  "question": "",
+                  "type": "solution",
+                  "options": [],
+                  "product": [
+                    "Recomendación: Dispositivos usados en buen estado"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "question": "¿Está buscando ropa para una ocasión específica?",
+          "type": "bitask",
+          "options": ["sí", "no"],
+          "descrip": "Filtro usuarios buscan ropa ocasión específica",
+          "product": [
+            {
+              "question": "¿Qué tipo de ocasión?",
+              "type": "multitask",
+              "options": ["Formal", "Casual", "Deportiva"],
+              "descrip": "Tipo ocasión",
+              "product": [
+                {
+                  "question": "",
+                  "type": "solution",
+                  "options": [],
+                  "product": [
+                    "Recomendación: Ropa para la ocasión seleccionada"
+                  ]
+                }
+              ]
+            },
+            {
+              "question": "¿Prefiere ropa hecha a medida?",
+              "type": "bitask",
+              "options": ["sí", "no"],
+              "descrip": "Preferencia por ropa hecha a medida",
+              "product": [
+                {
+                  "question": "",
+                  "type": "solution",
+                  "options": [],
+                  "product": [
+                    "Recomendación: Tiendas que ofrecen ropa hecha a medida"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "question": "¿Está buscando muebles para su hogar?",
+          "type": "bitask",
+          "options": ["sí", "no"],
+          "descrip": "Filtro usuarios buscan muebles",
+          "product": [
+            {
+              "question": "¿Prefiere muebles de madera?",
+              "type": "bitask",
+              "options": ["sí", "no"],
+              "descrip": "Preferencia por madera",
+              "product": [
+                {
+                  "question": "",
+                  "type": "solution",
+                  "options": [],
+                  "product": ["Recomendación: Muebles de madera de calidad"]
+                }
+              ]
+            },
+            {
+              "question": "¿Busca muebles con diseño moderno?",
+              "type": "bitask",
+              "options": ["sí", "no"],
+              "descrip": "Preferencia por diseño moderno",
+              "product": [
+                {
+                  "question": "",
+                  "type": "solution",
+                  "options": [],
+                  "product": ["Recomendación: Muebles con diseño moderno"]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "question": "¿Está interesado en recibir recomendaciones?",
+      "type": "bitask",
+      "options": ["sí", "no"],
+      "descrip": "Filtro usuarios interesados recomendaciones",
+      "product": [
+        {
+          "question": "¿Qué tipo de recomendación busca?",
+          "type": "multitask",
+          "options": ["Productos populares", "Novedades", "Ofertas"],
+          "descrip": "Tipo recomendación",
+          "product": [
+            {
+              "question": "",
+              "type": "solution",
+              "options": [],
+              "product": [
+                "Recomendación: Basada en su selección de tipo de recomendación"
+              ]
+            }
+          ]
+        },
+        {
+          "question": "¿Le interesan las ofertas del día?",
+          "type": "bitask",
+          "options": ["sí", "no"],
+          "descrip": "Interés en ofertas del día",
+          "product": [
+            {
+              "question": "",
+              "type": "solution",
+              "options": [],
+              "product": ["Recomendación: Las mejores ofertas del día"]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
