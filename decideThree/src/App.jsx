@@ -17,19 +17,59 @@ export default function App() {
 }
 
 function Container() {
+  let instanceDefault = {
+    question: "Error! Value undefined",
+    type: "undefined",
+    options: ["undefined"],
+    product: ["undefined"],
+    descrip: "undefined",
+    help: "undefined",
+  };
+
   const [instance, setInstance] = useState(process);
   const [history, setHistory] = useState([]);
+  const [helpActive, setHelp] = useState(false);
+
+  useEffect(() => {
+    if (instance === undefined || Object.keys(instance).length === 0) {
+      console.error("La instancia del arbol esta vacia o no existe");
+      setInstance(instanceDefault);
+    }
+  }, [instance]);
 
   return (
-    <div className="flex flex-col p-6 min-w-[600px] bg-[#c799a6] rounded-xl flex-wrap ">
-      <div className="flex justify-around h-14 items-center ">
+    <div className="flex flex-col p-4 w-[600px]  bg-gradient-to-br from-[#070b2d] to-[#4125c8] rounded-xl flex-wrap ">
+      <div className="flex justify-between h-14 items-center ">
         <div className=" flex flex-row gap-3 w-[70%] ">
-          <h1 className=" font-bold text-xl ">{instance.question}</h1>
-          <div className="w-5 h-5  rounded-full ">
-            <img src={question} alt="QuestionIcon" />
-          </div>
+          <h1 className=" font-bold text-xl text-white">
+            {instance?.question || ""}
+          </h1>
+          {instance?.help ? (
+            //Aca hace falta aplicar el efecto onhover
+            <div
+              className="w-5 h-5 rounded-full relative"
+              onMouseEnter={() => {
+                setHelp(true);
+              }}
+              onMouseLeave={() => {
+                setHelp(false);
+              }}
+            >
+              {helpActive ? (
+                <div className="absolute w-[300px] text-white bg-slate-700 ml-[150%] p-2 rounded-md ">
+                  {instance.help}
+                </div>
+              ) : (
+                <></>
+              )}
+
+              <img src={question} alt="QuestionIcon" />
+            </div>
+          ) : (
+            ""
+          )}
         </div>
-        <div className=" pl-10 h-10 w-auto self-start flex gap-4 ">
+        <div className=" self-start flex gap-4 p-1 rounded-xl bg-[rgba(99,99,99,0.5)] ">
           <div className="w-5 h-5 cursor-pointer  ">
             <img src={burger} alt="Menu icon" />
           </div>
@@ -53,27 +93,29 @@ function Container() {
           </div>
         </div>
       </div>
-      <div className="w-full flex-grow mt-14 ">
-        {instance.type === "multitask" ? (
+      <div className="w-full flex-grow">
+        {(instance?.type || instanceDefault.type) === "multitask" ? (
           <select
             name="options "
-            className="py-1 px-5 rounded font-bold text-xl  "
+            className="py-2 px-5  mt-5 rounded font-bold text-xl bg-[#011059] text-[#418cf1] "
             onChange={(event) => {
-              console.log(event.target.selectedIndex);
               setHistory([...history, instance]);
-              setInstance((prev) => prev.product[event.target.selectedIndex]);
+              setInstance(
+                (prev) => prev.product[event.target.selectedIndex - 1]
+              );
             }}
           >
+            <option value="null">Selecciona una opción</option>
             {instance.options.map((index, id) => (
               <option key={id} value={`${index}`}>
                 {index}
               </option>
             ))}
           </select>
-        ) : instance.type === "bitask" ? (
-          <div className="flex gap-10 px-2 text-xl font-bold ">
+        ) : (instance?.type || instanceDefault.type) === "bitask" ? (
+          <div className="flex justify-start gap-10 px-2 mt-5  text-xl font-bold ">
             <button
-              className="bg-[#7065f2] w-20 px-3 py-2 rounded "
+              className="border-2 border-white hover:border-[#011059] rounded-xl px-10 hover:bg-[#011059] py-2 text-white hover:text-[#418cf1] transition-colors "
               onClick={() => {
                 setHistory([...history, instance]);
                 setInstance((prev) => prev.product[0]);
@@ -82,7 +124,7 @@ function Container() {
               SI
             </button>
             <button
-              className="bg-[#7065f2] w-20 px-3 py-2 rounded "
+              className="border-2 border-white hover:border-[#011059] rounded-xl px-10 hover:bg-[#011059] py-2 text-white hover:text-[#418cf1] transition-colors "
               onClick={() => {
                 setHistory([...history, instance]);
                 setInstance((prev) => prev.product[1]);
@@ -91,8 +133,12 @@ function Container() {
               NO
             </button>
           </div>
-        ) : instance.type === "solution" ? (
-          <div>solucion: {instance.product[0]} </div>
+        ) : (instance?.type || instanceDefault.type) === "solution" ? (
+          <div className=" text-white h-full ">
+            solucion: {instance.product[0]}
+          </div>
+        ) : (instance?.type || instanceDefault.type) === "undefined" ? (
+          ""
         ) : (
           ""
         )}
