@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Desition Map</title>
+</head>
+
+<body class="w-full h-[100vh] bg-[#464646] flex justify-center items-center">
+    <div class="flex flex-col p-4 w-[600px]  bg-gradient-to-br from-[#070b2d] to-[#4125c8] rounded-xl flex-wrap">
+        <div class="flex justify-between h-14 items-center">
+            <div class="flex flex-row gap-3 w-[70%] ">
+                <h1 class="font-bold text-xl text-white" id="question"></h1>
+                <div class="w-5 h-5 rounded-full relative hidden " id="help">
+                    <div class="absolute left-full p-1 rounded-xl bg-slate-700 hidden min-w-[200px] " id="helpBar">
+                    </div>
+                    <img src="./assets/quest.png" alt="QuestionIcon" class="h-5" />
+                </div>
+            </div>
+            <div class="self-start flex gap-4 p-1 rounded-xl bg-[rgba(99,99,99,0.5)]">
+                <div class="w-5 h-5 cursor-pointer  ">
+                    <img class="h-5" src="./assets/burger.png" alt="Menu icon" />
+                </div>
+                <div class="w-5 h-5 cursor-pointer  ">
+                    <img class="h-5" src="./assets/clock.png" alt="clock icon" />
+                </div>
+                <div class="w-5 h-5 cursor-pointer  ">
+                    <img class="h-5" src="./assets/back.png" alt="back icon" id="back" />
+                </div>
+            </div>
+        </div>
+        <div class="w-full flex-grow pt-2 " id="options"></div>
+    </div>
+    <script src="./index.js"></script>
+</body>
+
+</html>
